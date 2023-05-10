@@ -18,4 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-urlpatterns = [path("admin/", admin.site.urls), path("MyApp", include("Myapp.urls"))]
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("MyApp.urls")),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
