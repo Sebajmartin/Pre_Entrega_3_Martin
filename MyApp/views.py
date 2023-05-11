@@ -2,6 +2,9 @@ from datetime import datetime
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.urls import reverse, reverse_lazy
+from django.conf import settings
+from django.views.generic import TemplateView
 
 
 def saludar(request):
@@ -33,14 +36,8 @@ def saludar_con_html(request):
     return http_responde
 
 
-from django.shortcuts import render
-
-
-from django.conf import settings
-
-
 def index(request):
-    return render(request, "index.html")
+    template_name = "index.html"
 
 
 def clientes(request):

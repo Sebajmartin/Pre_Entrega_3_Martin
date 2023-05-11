@@ -1,25 +1,5 @@
-{% extends 'base.html' %}
+{% extends "MyApp/clientes.html" %}
 
-{% block content %}
-  <h2>Listado de clientes:</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Direccion</th>
-        <th>Telefono</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for cliente in clientes %}
-        <tr>
-          <td>{{ cliente.nombre }}</td>
-          <td>{{ cliente.email }}</td>
-          <td>{{ cliente.direccion }}</td>
-          <td>{{ cliente.telefono }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-{% endblock %}
+{% block contenido_estudiantes %}
+# Componente que permite buscar los estudiantes
+{% endblock contenido_estudiantes %}
