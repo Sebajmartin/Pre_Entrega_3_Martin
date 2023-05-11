@@ -45,7 +45,8 @@ def index(request):
 
 
 def clientes(request):
-    contexto = {}
+    contexto = { 
+        "clientes": Clientes.objects.all()
     http_response = render(
         request=request,
         template_name="clientes.html",
@@ -54,7 +55,9 @@ def clientes(request):
 
 
 def producto(request):
-    contexto = {}
+    contexto = {
+        "productos": Productos.objects.all()
+    }
     http_response = render(
         request=request,
         template_name="producto.html",
