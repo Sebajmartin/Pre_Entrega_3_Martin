@@ -19,7 +19,7 @@ class Personal(models.Model):
     sector = models.CharField(max_length=240)
 
 
-class Producto(models.Model):
+class Productos(models.Model):
     marca = models.CharField(max_length=240)
     modelo = models.CharField(max_length=240)
     proveedor = models.CharField(max_length=240)

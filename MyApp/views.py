@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.urls import reverse, reverse_lazy
 from django.conf import settings
 from django.views.generic import TemplateView
+from django.views.generic import Productos
 
 
 def saludar(request):
@@ -45,25 +46,23 @@ def index(request):
 
 
 def clientes(request):
-    contexto = { 
-        "clientes": Clientes.objects.all()
+    contexto = {}
     http_response = render(
         request=request,
-        template_name="clientes.html",
+        template_name="cliente.html",
         context=contexto,
     )
+    return http_response
 
 
-def producto(request):
-    contexto = {
-        "productos": Productos.objects.all()
-    }
+def productos(request):
+    contexto = {"productos": Productos.objects.all()}
     http_response = render(
         request=request,
         template_name="producto.html",
         context=contexto,
     )
-    http_response
+    return http_response
 
 
 from django.shortcuts import render
