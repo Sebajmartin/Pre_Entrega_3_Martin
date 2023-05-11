@@ -37,7 +37,13 @@ def saludar_con_html(request):
 
 
 def index(request):
-    template_name = "index.html"
+    contexto = {index.html}
+    http_response = render(
+        request=request,
+        template_name="Web/MyApp/templates/index.html",
+        context=contexto,
+    )
+    return http_response
 
 
 def clientes(request):
