@@ -37,11 +37,9 @@ def saludar_con_html(request):
 
 
 def index(request):
-    contexto = {index.html}
     http_response = render(
         request=request,
-        template_name="Web/MyApp/templates/index.html",
-        context=contexto,
+        template_name="index.html",
     )
     return http_response
 
@@ -50,7 +48,7 @@ def clientes(request):
     contexto = {}
     http_response = render(
         request=request,
-        template_name="Web/MyApp/templates/clientes.html",
+        template_name="clientes.html",
         context=contexto,
     )
 
@@ -59,9 +57,10 @@ def producto(request):
     contexto = {}
     http_response = render(
         request=request,
-        template_name="Web/MyApp/templates/producto.html",
+        template_name="producto.html",
         context=contexto,
     )
+    http_response
 
 
 from django.shortcuts import render
