@@ -27,17 +27,43 @@ def saludar_con_html(request):
     contexto = {"usuario": "Pedro"}
     http_responde = render(
         request=request,
-        template_name="MyApp/MyApp.html",
+        template_name="MyApp/templates/index.html",
         context=contexto,
     )
     return http_responde
 
 
+from django.shortcuts import render
+
+
+from django.conf import settings
+
+
 def index(request):
+    return render(request, "index.html")
+
+
+def clientes(request):
     contexto = {}
     http_response = render(
         request=request,
-        template_name="MyApp/index.html",
+        template_name="Web/MyApp/templates/clientes.html",
         context=contexto,
     )
-    return http_response
+
+
+def producto(request):
+    contexto = {}
+    http_response = render(
+        request=request,
+        template_name="Web/MyApp/templates/producto.html",
+        context=contexto,
+    )
+
+
+from django.shortcuts import render
+
+
+def personal(request):
+    contexto = {}
+    return render(request, "MyApp/templates/personal.html", contexto)
