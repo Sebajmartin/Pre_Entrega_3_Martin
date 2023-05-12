@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.urls import reverse, reverse_lazy
 from django.conf import settings
 from django.views.generic import TemplateView
-from django.views.generic import Productos
+from MyApp.models import Productos
 
 
 def saludar(request):
@@ -49,14 +49,14 @@ def clientes(request):
     contexto = {}
     http_response = render(
         request=request,
-        template_name="cliente.html",
+        template_name="clientes.html",
         context=contexto,
     )
     return http_response
 
 
-def productos(request):
-    contexto = {"productos": Productos.objects.all()}
+def producto(request):
+    contexto = {"producto": Productos.objects.all()}
     http_response = render(
         request=request,
         template_name="producto.html",
@@ -70,4 +70,4 @@ from django.shortcuts import render
 
 def personal(request):
     contexto = {}
-    return render(request, "MyApp/templates/personal.html", contexto)
+    return render(request, "personal.html", contexto)
