@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<section>
+  <div>
+    <h1>Lista del personal</h1>
+    <a href="{% url 'MyApp:crear_personal' %}">Crear personal</a>
+    <br> <br>
+
+    <table class="table">
+      <tbody>
+        <tr>
+      
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>E-Mail/</th>
+          <th>Telefono</th>
+          <th>Direccion</th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        {% for personal in object_list %}
+        <tr>
+          <td>{{ personal.id }}</td>
+          <td>{{ personal.nombre }}</td>
+          <td>{{ personal.apellido }}</td>
+          <td>{{ personal.email }}</td>
+          <td>{{ personal.telefono }}</td>
+          <td>{{ personal.direccion }}</td>
+          <td>
+            <a href="{% url 'ver_personal' personal.id %}">Ver</a>
+          </td>
+          <td>
+            <a href="{% url 'editar_personal' personal.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'eliminar_personal' personal.id %}">
+              <i class="bi bi-trash"></i>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>
+{% endblock contenido %}

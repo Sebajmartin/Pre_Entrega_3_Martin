@@ -79,10 +79,11 @@ from django.shortcuts import render
 
 
 def personal(request):
-    contexto = {"producto": Personal.objects.all()}
+    contexto = {"producto": (p for p in Personal.objects.all())}
+
     http_response = render(
         request=request,
-        template_name="personal.html",
+        template_name="MyApp/lista_personal.html",
         context=contexto,
     )
     return http_response

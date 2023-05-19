@@ -22,11 +22,11 @@ urlpatterns = [
     path("producto/", views.producto, name="producto"),
     path("personal/", views.personal, name="personal"),
     path("lista_clientes/", views.crear_cliente, name="crear_cliente"),
-    path("lista_personal/", views.PersonalListView.as_view(), name="crear_personal"),
+    path("lista_personal/", views.PersonalListView.as_view(), name="lista_personal"),
     path("ver_personal/", views.PersonalListView.as_view(), name="ver_personal"),
     path("editar_personal/", PersonalUpdateView.as_view(), name="editar_personal"),
     path("personal/<int:pk>/", PersonalDetailView.as_view(), name="ver_personal"),
-    path("crear-personal/", PersonalCreateView.as_view(), name="crear_personal"),
+    path("MyApp:crear_personal/", PersonalCreateView.as_view(), name="crear_personal"),
     path(
         "eliminar-personal/<int:pk>/",
         PersonalDeleteView.as_view(),
